@@ -5,17 +5,17 @@ from PyQt5.uic import loadUiType
 from AutomataTheoryQt import *
 import sys, time
 
-ui,_=loadUiType("BaseUserInterface.ui")
+PrimaryUserInterface,_=loadUiType("BaseUserInterface.ui")
 
-class MainApp(QMainWindow,ui):
+class MainApp(QMainWindow, PrimaryUserInterface):
     def __init__(self):
         QMainWindow.__init__(self)
         self.title = "RE2FA Converter by t0xic0der"
         self.setupUi(self)
-        self.handleElements()
+		self.setWindowTitle(self.title)
+        self.HandleElements()
 
-    def handleElements(self):
-        self.setWindowTitle(self.title)
+    def HandleElements(self):
         self.textedit.setReadOnly(True)
         self.pushbutn.clicked.connect(self.compdata)
 
@@ -48,6 +48,7 @@ def main():
     app=QApplication(sys.argv)
     QFontDatabase.addApplicationFont("Roboto-Regular.ttf")
     QFontDatabase.addApplicationFont("RobotoMono-Regular.ttf")
+	QFontDatabase.addApplicationFont("RobotoMono-Bold.ttf")
     QFontDatabase.addApplicationFont("RobotoMono-Italic.ttf")
     window=MainApp()
     window.show()
