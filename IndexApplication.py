@@ -12,7 +12,7 @@ class MainApp(QMainWindow, PrimaryUserInterface):
         QMainWindow.__init__(self)
         self.title = "RE2FA Converter by t0xic0der"
         self.setupUi(self)
-		self.setWindowTitle(self.title)
+        self.setWindowTitle(self.title)
         self.HandleElements()
 
     def HandleElements(self):
@@ -48,7 +48,7 @@ def main():
     app=QApplication(sys.argv)
     QFontDatabase.addApplicationFont("Roboto-Regular.ttf")
     QFontDatabase.addApplicationFont("RobotoMono-Regular.ttf")
-	QFontDatabase.addApplicationFont("RobotoMono-Bold.ttf")
+    QFontDatabase.addApplicationFont("RobotoMono-Bold.ttf")
     QFontDatabase.addApplicationFont("RobotoMono-Italic.ttf")
     window=MainApp()
     window.show()
